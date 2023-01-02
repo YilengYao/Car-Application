@@ -1,0 +1,8 @@
+INSERT INTO cars (first_name, last_name, email, gender, country, city, street_number, address, credit_card_type, credit_card, currency, ethnicity, car_make, car_model, car_model_year, car_vin)
+VALUES
+    ('Ted', 'Etchell', 'tetchell0@storify.com', 'Male', 'China', 'Aozai', '3', '615 Londonderry Circle', 'switch', 4903419885243528650, 'CNY', 'Salvadoran', 'Mitsubishi', 'L300', 1988, 'KNAGM4AD2B5699193'),
+    ('Harriott', 'Wyles', 'hwyles1@techcrunch.com', 'Female', 'Indonesia', 'Riangblolong', '51', '3 Twin Pines Lane', 'diners-club-carte-blanche', 30080760450623, 'IDR', 'Shoshone', 'Mitsubishi', 'Montero Sport', 2000, 'WAUMFAFL4CN836938'),
+    ('Gillie', 'Luxton', 'gluxton2@angelfire.com', 'Female', 'Saudi Arabia', 'Julayjilah', '2', '7131 Dayton Trail', 'visa-electron', 4175004087702026, 'SAR', 'Venezuelan', 'Hyundai', 'Santa Fe', 2011, 'WDCYC7DF3FX092121'),
+    ('Rod', 'Arington', 'rarington3@topsy.com', 'Male', 'Indonesia', 'Awilega', '74', '6869 Pearson Point', 'diners-club-carte-blanche', 30333072180515, 'IDR', 'Asian Indian', 'Ford', 'F150', 2012, 'WBAAV33431F921386'),
+    ('Ewell', 'Grece', 'egrece4@stumbleupon.com', 'Male', 'Portugal', 'Carrascal', '61', '35196 Bartillon Parkway', 'bankcard', 5602219457917877, 'EUR', 'Sri Lankan', 'Subaru', 'Outback', 2000, 'NM0KS9BN3DT918066'),
+    ('Melina', 'Charnley', 'mcharnley5@japanpost.jp', 'Female', 'Czech Republic', 'Stará Paka', '619', '49 Hudson Plaza', 'visa-electron', 4026654627346311, 'CZK', 'Indonesian', 'Ford', 'Crown Victoria', 1993, '2T1BPRHE5EC347572');

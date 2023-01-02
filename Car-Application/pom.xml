@@ -20,7 +20,7 @@
         <spring.web.version>2.7.0</spring.web.version>
         <dgs.version>5.5.0</dgs.version>
         <mysql.connector.version>8.0.31</mysql.connector.version>
-        <database.url>jdbc:mysql://car-database:3306</database.url>
+        <database.url>jdbc:mysql://localhost:3306</database.url>
         <database.schema>car_store</database.schema>
         <database.user>user</database.user>
         <database.password>password</database.password>

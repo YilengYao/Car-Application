@@ -1,8 +1,0 @@
-type Show {
-    title: String
-    releaseYear: Int
-}
-
-type Query {
-    shows(titleFilter: String): [Show]
-}

@@ -1,0 +1,77 @@
+type Car {
+    car_id: ID!
+    first_name: String!
+    last_name: String!
+    email: String!
+    gender: Gender!
+    country: String!
+    city: String!
+    street_number: String!
+    address: String!
+    credit_card_type: String!
+    credit_card: Int!
+    currency: String!
+    ethnicity: String!
+    car_make: String!
+    car_model: String!
+    car_model_year: Int!
+    car_vin: String!
+}
+
+enum Gender {
+    Male
+    Female
+    Nonbinary
+}
+
+input CarYearRange {
+    min_year: Int!
+    max_year: Int!
+}
+
+type Query {
+    allCars(
+        first_name: String
+        last_name: String
+        gender: Gender
+        country: String
+        city: String
+        credit_card_type: String
+        currency: String
+        ethnicity: String
+        car_make: String
+        car_model: String
+        car_year_range: CarYearRange
+    ): [Car]
+    cars(
+        ids: [ID!]
+        emails: [String!]
+        credit_card_numbers: [Int!]
+        car_vins: [String!]
+    ): [Car]
+}
+
+type CreateCarOutput {
+    id: ID
+}
+
+type Mutation {
+    createCar(
+        first_name: String!
+        last_name: String!
+        email: String!
+        gender: Gender!
+        country: String!
+        city: String!
+        street_number: String!
+        address: String!
+        credit_card_type: String!
+        credit_card: Int!
+        currency: String!
+        ethnicity: String!
+        car_make: String!
+        car_model: String!
+        car_model_year: Int!
+        car_vin: String!
+    ): CreateCarOutput
+}

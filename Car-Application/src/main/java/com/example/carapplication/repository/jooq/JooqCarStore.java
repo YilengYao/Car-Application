@@ -2,6 +2,7 @@ package com.example.carapplication.repository.jooq;
 
 import com.example.carapplication.graphql.generated.types.Car;
 import com.example.carapplication.graphql.generated.types.CarYearRange;
+import com.example.carapplication.graphql.generated.types.CreateCarOutput;
 import com.example.carapplication.graphql.generated.types.Gender;
 import com.example.carapplication.repository.CarStore;
 import org.jooq.Condition;
@@ -102,6 +103,50 @@ public class JooqCarStore implements CarStore {
         return deserializeRecord(result);
     }
 
+    @Override
+    public CreateCarOutput createCar(String firstName, String lastName, String email, Gender gender, String country, String city, String streetNumber, String address, String creditCardType, Long creditCard, String currency, String ethnicity, String carMake, String carModel, Integer carModelYear, String carVin) {
+        var result = context
+                .insertInto(CARS)
+                .columns(
+                        CARS.FIRST_NAME,
+                        CARS.LAST_NAME,
+                        CARS.EMAIL,
+                        CARS.GENDER,
+                        CARS.COUNTRY,
+                        CARS.CITY,
+                        CARS.STREET_NUMBER,
+                        CARS.ADDRESS,
+                        CARS.CREDIT_CARD_TYPE,
+                        CARS.CREDIT_CARD,
+                        CARS.CURRENCY,
+                        CARS.ETHNICITY,
+                        CARS.CAR_MAKE,
+                        CARS.CAR_MODEL,
+                        CARS.CAR_MODEL_YEAR,
+                        CARS.CAR_VIN
+                )
+                .values(
+                        firstName,
+                        lastName,
+                        email,
+                        com.example.carapplication.jooq.generator.enums.CarsGender.valueOf(gender.name()),
+                        country,
+                        city,
+                        streetNumber,
+                        address,
+                        creditCardType,
+                        creditCard,
+                        currency,
+                        ethnicity,
+                        carMake,
+                        carModel,
+                        carModelYear,
+                        carVin)
+                .returningResult(CARS.CAR_ID)
+                .fetchOne();
+        return CreateCarOutput.newBuilder().id(result.get(CARS.CAR_ID).toString()).build();
+    }
+
     private List<Car> deserializeRecord(Result<com.example.carapplication.jooq.generator.tables.records.CarsRecord> carResult) {
         List<Car> carList = new ArrayList<>();
         for (org.jooq.Record record: carResult) {
@@ -146,5 +191,4 @@ public class JooqCarStore implements CarStore {
 
         return carList;
     }
-
 }

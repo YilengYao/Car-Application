@@ -24,6 +24,29 @@ enum Gender {
     Nonbinary
 }
 
+input CarYearRange {
+    min_year: Int!
+    max_year: Int!
+}
+
 type Query {
-    allCars: [Car]
+    allCars(
+        first_name: String
+        last_name: String
+        gender: Gender
+        country: String
+        city: String
+        credit_card_type: String
+        currency: String
+        ethnicity: String
+        car_make: String
+        car_model: String
+        car_year_range: CarYearRange
+    ): [Car]
+    cars(
+        ids: [ID!]
+        emails: [String!]
+        credit_card_numbers: [Int!]
+        car_vins: [String!]
+    ): [Car]
 }

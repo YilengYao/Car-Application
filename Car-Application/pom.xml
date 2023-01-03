@@ -118,7 +118,7 @@
                 </executions>
                 <configuration>
                     <schemaPaths>
-                        <param>src/main/resources/schema/shows.graphqls</param>
+                        <param>src/main/resources/schema/cars.graphqls</param>
                     </schemaPaths>
                     <packageName>${package.name}.graphql.generated</packageName>
                 </configuration>

@@ -1,0 +1,29 @@
+type Car {
+    car_id: ID!
+    first_name: String!
+    last_name: String!
+    email: String!
+    gender: Gender!
+    country: String!
+    city: String!
+    street_number: String!
+    address: String!
+    credit_card_type: String!
+    credit_card: Int!
+    currency: String!
+    ethnicity: String!
+    car_make: String!
+    car_model: String!
+    car_model_year: Int!
+    car_vin: String!
+}
+
+enum Gender {
+    Male
+    Female
+    Nonbinary
+}
+
+type Query {
+    allCars: [Car]
+}
